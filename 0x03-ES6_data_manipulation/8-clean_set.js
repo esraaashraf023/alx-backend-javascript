@@ -1,12 +1,12 @@
-function cleanSet(set, startString){
-    let result = [];
-    if (startString === '' || typeof startString !== 'string')
-        return '';
-    set.forEach(element => {
-        if(typeof element === 'string' && element.startsWith(startString)){
-            result.push(element.substring(startString.length));
+export default function cleanSet(set, startString) {
+    const arr = [];
+    if (startString && typeof startString === 'string') {
+      for (const ele of set) {
+        if (ele.startsWith(startString)) {
+          arr.push(ele.slice(startString.length));
         }
-    });
-    return result.join('-');
-}
-export default cleanSet;
+      }
+      return arr.join('-');
+    }
+    return '';
+  }
