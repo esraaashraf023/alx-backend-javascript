@@ -3,3 +3,4 @@ function getStudentsByLocation(studentlist, city) {
 }
 
 export default getStudentsByLocation;
+
